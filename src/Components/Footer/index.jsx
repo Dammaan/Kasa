@@ -2,35 +2,33 @@ import styled from "styled-components";
 import logo from "../../Assets/LOGOblanc.png";
 
 const FooterContainer = styled.footer`
-    width:100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-    background-color: black; 
+    padding: ${({ theme }) => theme.spacing.large}; 
+    background-color: ${({ theme }) => theme.colors.black}; 
+    margin-top: auto;
 `;
 
-
 const FooterImg = styled.img`
-    width: 122x;
+    width: 122px; 
     height: 39px;
-    margin: 20px;
+    margin: ${({ theme }) => theme.spacing.medium};
 
     @media (max-width: 768px) {
-        margin:0px;
+        margin: 0;
     }
 `;
 
-
 const FooterTxt = styled.p`
-    color: white;
-    font-size: 14px;
+    color: ${({ theme }) => theme.colors.white};
+    font-size: ${({ theme }) => theme.fontSizes.small}; 
     text-align: center;
 
-
     @media (max-width: 768px) {
-        width: 133px
+        width: 133px;
     }
 `;
 

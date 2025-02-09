@@ -11,16 +11,16 @@ const BannerContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px;
+    margin: ${({ theme }) => theme.spacing.large};
     position: relative;
-    border-radius: 25px; 
+    border-radius: ${({ theme }) => theme.borderRadius.large};
 
     /* Image de fond */
     background-image: url(${(props) => props.$bgImage});
     background-size: cover;
     background-position: center;
 
-    /* Shadow */
+    /* Overlay pour l'effet sombre */
     &::before {
         content: '';
         position: absolute;
@@ -28,31 +28,30 @@ const BannerContainer = styled.div`
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(0, 0, 0, 0.6); 
-        border-radius: 20px; 
+        background: rgba(0, 0, 0, 0.6);
+        border-radius: ${({ theme }) => theme.borderRadius.large}; 
         z-index: 0;  
-    } 
+    }
+
     @media (max-width: 768px) {
-    height: 111px;
-    justify-content: left
-
-
-        
+        height: 111px;
+        justify-content: flex-start;
     }
 `;
 
 const BannerTxt = styled.p`
-    color: white;
-    font-size: 48px;
+    color: ${({ theme }) => theme.colors.white};
+    font-size: ${({ theme }) => theme.fontSizes.xxLarge};
+    font-weight: 700;
     text-align: center;
     z-index: 1;
-    @media (max-width: 768px) {
-        font-size: 24px;
-        margin-left: 10px;
-        width: 225px ;
-        text-align: left;
 
-    } 
+    @media (max-width: 768px) {
+        font-size: ${({ theme }) => theme.fontSizes.large};
+        margin-left: ${({ theme }) => theme.spacing.medium};
+        width: 225px;
+        text-align: left;
+    }
 `;
 
 function Banner() {
