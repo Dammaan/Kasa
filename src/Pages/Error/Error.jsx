@@ -50,9 +50,9 @@ const ErrorLink = styled(Link)`
 function Error() {
     return (
         <ErrorContainer>
-            <ErrorTitle>404</ErrorTitle> 
-            <ErrorTxt>Oups! La page que vous demandez nexiste pas.</ErrorTxt> 
-            <ErrorLink to="/">Retourner sur la page daccueil</ErrorLink>
+            <ErrorTitle>404</ErrorTitle>
+            <ErrorTxt>Oups! La page que vous demandez n'existe pas.</ErrorTxt>
+            <ErrorLink to="/">Retourner sur la page d'accueil</ErrorLink>
         </ErrorContainer>
     );
 }

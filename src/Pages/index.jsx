@@ -24,11 +24,11 @@ const GlobalStyle = createGlobalStyle`
     font-family: ${({ theme }) => theme.fonts.primary};
     background-color: ${({ theme }) => theme.colors.background};
   }
-  
+
   #root {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Force l'occupation totale de l'écran */
+    min-height: 100vh; 
   }
 `;
 
