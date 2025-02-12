@@ -28,6 +28,7 @@ const GlobalStyle = createGlobalStyle`
   #root {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     min-height: 100vh; 
   }
 `;
@@ -41,7 +42,7 @@ createRoot(document.getElementById('root')).render(
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/apropos" element={<Apropos />} />
-          <Route path="/fichelogement" element={<HouseForm />} />
+          <Route path="/fichelogement/:id" element={<HouseForm />} />
           <Route path="*" element={<Error />} />
         </Routes>
         <Footer />

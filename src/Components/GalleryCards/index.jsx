@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import dataLogements from "../../Datas/logementlist.json";
+import { useNavigate } from "react-router-dom";
 
 const CardContainer = styled.div`
   width: 95%;
@@ -15,6 +16,10 @@ const CardContainer = styled.div`
     grid-template-rows: repeat(1, 1fr);
     grid-template-columns: repeat(1, 1fr);
     gap: ${({ theme }) => theme.spacing.large};
+
+    @media (max-width: 768px) {
+        width: 90%
+    }
   }
 `;
 
@@ -33,6 +38,8 @@ const CardLogement = styled.div`
       rgba(4, 4, 4, 0.41)
     ),
     url(${(props) => props.$bgImage}) center/cover no-repeat;
+
+    
 `;
 
 const Title = styled.h2`
@@ -44,10 +51,17 @@ const Title = styled.h2`
 `
 
 function GalleryCards() {
+  const navigate = useNavigate();
+  
   return (
     <CardContainer>
       {dataLogements.map((logement) => (
-        <CardLogement key={logement.id} $bgImage={logement.pictures[0]}>
+        <CardLogement
+        key={logement.id}
+        $bgImage={logement.pictures[0]}
+        onClick={() => navigate(`/fichelogement/${logement.id}`)} 
+      >
+
           <Title>{logement.title}</Title>
         </CardLogement>
       ))}

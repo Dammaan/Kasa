@@ -36,6 +36,7 @@ const BannerContainer = styled.div`
     @media (max-width: 768px) {
         height: 111px;
         justify-content: flex-start;
+        width: 90%
     }
 `;
 

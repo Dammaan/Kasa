@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const CenteredContainer = styled.div`
   display: flex;
-  justify-content: center;  /* Centre horizontalement */
+  justify-content: center;  
 `;
 
 const DropdownContainer = styled.div`
