@@ -13,13 +13,10 @@ const CardContainer = styled.div`
   border-radius: ${({ theme }) => theme.borderRadius.large};
   margin: ${({ theme }) => theme.spacing.large};
   @media (max-width: 768px) { 
+    width: 90%;
     grid-template-rows: repeat(1, 1fr);
     grid-template-columns: repeat(1, 1fr);
-    gap: ${({ theme }) => theme.spacing.large};
-
-    @media (max-width: 768px) {
-        width: 90%
-    }
+    gap: ${({ theme }) => theme.spacing.large};       
   }
 `;
 
