@@ -1,5 +1,4 @@
-import { useParams } from "react-router-dom";
-import dataLogements from "../../Datas/logementlist.json";
+import PropTypes from "prop-types";
 import Dropdown from "../../Components/Dropdown";
 import styled from "styled-components";
 
@@ -8,19 +7,15 @@ const InfoContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  gap: ${({ theme }) => theme.spacing.small};
   width: 90%;
+  gap: ${({ theme }) => theme.spacing.large};
 
   @media (max-width: 768px) {
     flex-direction: column;
   }
 `;
 
-
-function InfoDropdown() {
-  const { id } = useParams();
-  const logement = dataLogements.find((item) => item.id.toString() === id);
-
+function InfoDropdown({ logement }) {
   return (
     <InfoContainer>
       {/* Dropdown pour les équipements */}
@@ -32,11 +27,18 @@ function InfoDropdown() {
 
       {/* Dropdown pour la description */}
       <Dropdown title="Description">
-  <p>{logement.description}</p>
-</Dropdown>
-
+        <p>{logement.description}</p>
+      </Dropdown>
     </InfoContainer>
   );
 }
+
+// Définition des PropTypes
+InfoDropdown.propTypes = {
+  logement: PropTypes.shape({
+    equipments: PropTypes.arrayOf(PropTypes.string).isRequired,
+    description: PropTypes.string.isRequired,
+  }).isRequired,
+};
 
 export default InfoDropdown;

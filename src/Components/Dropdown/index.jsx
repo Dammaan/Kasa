@@ -5,35 +5,29 @@ import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import PropTypes from 'prop-types';
 
 
-const CenteredContainer = styled.div`
-  display: flex;
-  justify-content: center;  
-`;
+
 
 const DropdownContainer = styled.div`
-  width: 80%;
+  width:90%;
   display: flex;
   flex-direction: column;
   margin-bottom:${({ theme }) => theme.spacing.xLarge};
   cursor: pointer;
 
-  @media (max-width: 768px) {
-    width: 90%;
-  }
 `;
 
 const TitleContainer = styled.div`
   display: flex;
   justify-content:space-between;
   align-items: center;
-  padding: ${({ theme }) => theme.spacing.large};
+  padding: ${({ theme }) => theme.spacing.medium};
   background-color: ${({ theme }) => theme.colors.primary};
   border-radius: ${({ theme }) => theme.borderRadius.small};
   color: ${({ theme }) => theme.colors.white};
   font-size: ${({ theme }) => theme.fontSizes.large};
   @media (max-width: 768px) {
     font-size: ${({ theme }) => theme.fontSizes.medium};
-    min-width: 400px;
+    padding: ${({ theme }) => theme.spacing.small};
   }
 `;
 
@@ -59,7 +53,6 @@ function Dropdown({ title, children }) {
   };
 
   return (
-    <CenteredContainer>
       <DropdownContainer onClick={handleClick}>
         <TitleContainer>
           <h2>{title}</h2>
@@ -74,7 +67,6 @@ function Dropdown({ title, children }) {
           </CollapseText>
         )}
       </DropdownContainer>
-    </CenteredContainer>
   );
 }
 
