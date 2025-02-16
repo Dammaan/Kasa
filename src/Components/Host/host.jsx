@@ -4,8 +4,7 @@ import PropTypes from "prop-types";
 const HostContainer = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: center;
-  margin: ${({ theme }) => theme.spacing.large};
+  align-items: center;;
 `;
 
 const NameHost = styled.p`

@@ -18,6 +18,11 @@ const InfoContainer = styled.div`
 function InfoDropdown({ logement }) {
   return (
     <InfoContainer>
+      {/* Dropdown pour la description */}
+      <Dropdown title="Description">
+        <p>{logement.description}</p>
+      </Dropdown>
+
       {/* Dropdown pour les équipements */}
       <Dropdown title="Équipements">
         {logement.equipments.map((equipement, index) => (
@@ -25,10 +30,6 @@ function InfoDropdown({ logement }) {
         ))}
       </Dropdown>
 
-      {/* Dropdown pour la description */}
-      <Dropdown title="Description">
-        <p>{logement.description}</p>
-      </Dropdown>
     </InfoContainer>
   );
 }

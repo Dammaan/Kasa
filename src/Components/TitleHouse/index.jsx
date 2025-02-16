@@ -3,10 +3,8 @@ import PropTypes from "prop-types";
 
 // Définition des composants styled
 const InfoContainer = styled.div`
-  padding: ${({ theme }) => theme.spacing.medium};
   background-color: ${({ theme }) => theme.colors.lightGray};
   border-radius: ${({ theme }) => theme.borderRadius.medium};
-  margin-top: ${({ theme }) => theme.spacing.large};
 `;
 
 const TitleHouse = styled.h1`

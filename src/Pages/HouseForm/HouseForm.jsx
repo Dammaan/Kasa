@@ -6,7 +6,23 @@ import InfoDropdown from "../../Components/Infohouse";
 import { useParams, Navigate } from "react-router-dom";
 import dataLogements from "../../Datas/logementlist.json";
 import Rating from "../../Components/rating";
+import styled from "styled-components";
 
+const PrincipalContainer = styled.div`
+display: flex;
+flex-direction:column;
+align-items:center;
+gap: ${({ theme }) => theme.spacing.xLarge};
+
+`;
+const RowDiv = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const FirstDiv = styled.div`
+`
 
 function HouseForm() {
   const { id } = useParams();
@@ -17,15 +33,25 @@ function HouseForm() {
   }
 
   return (
-    <div>
-      <Slider  logement={logement}/>
-      <TitleLoc logement={logement} />
-      <Host  logement={logement}/>
-      <Rating rating={logement.rating.toString()} />
-      <Tags  logement={logement}/>
-      <InfoDropdown logement={logement}/>
+    <PrincipalContainer>
       
-    </div>
+        
+    <Slider  logement={logement}/>
+      <RowDiv>
+        <FirstDiv>
+        <TitleLoc logement={logement} />
+        <Tags  logement={logement}/>
+        </FirstDiv>
+        
+        <div>
+        <Host  logement={logement}/>
+        <Rating rating={logement.rating.toString()} /> 
+        </div>
+      </RowDiv>
+      
+    <InfoDropdown logement={logement}/>
+      
+    </PrincipalContainer>
   );
 }
 

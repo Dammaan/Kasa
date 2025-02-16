@@ -16,7 +16,8 @@ function Apropos() {
         <Banner />
         <CenteredContainer>
           {dataAbout.map((item, index) => (
-            <Dropdown key={index} title={item.title} text={item.texte} />
+            <Dropdown key={index} title={item.title}>{item.texte}</Dropdown>
+
           ))}
         </CenteredContainer>
       </div>

@@ -4,6 +4,14 @@ import { faStar as faRegularStar } from "@fortawesome/free-regular-svg-icons";
 import { faStar as faSolidStar } from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
 
+const RatingContainer = styled.div`
+  display: flex;
+  gap: 5px;
+  font-size:${({ theme }) => theme.fontSizes.large};  ;
+  color:${({ theme }) => theme.colors.primary};
+`;
+
+
 function Rating({ rating }) {
   const numericRating = Number(rating) || 0; // Convertir la note en nombre, avec fallback à 0
 
@@ -19,12 +27,7 @@ function Rating({ rating }) {
   );
 }
 
-const RatingContainer = styled.div`
-  display: flex;
-  gap: 5px;
-  font-size:${({ theme }) => theme.fontSizes.large};  ;
-  color:${({ theme }) => theme.colors.primary};
-`;
+
 
 
 Rating.propTypes = {
