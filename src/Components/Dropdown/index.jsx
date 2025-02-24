@@ -13,6 +13,9 @@ const DropdownContainer = styled.div`
   flex-direction: column;
   margin-bottom:${({ theme }) => theme.spacing.xLarge};
   cursor: pointer;
+  @media (max-width: 768px) {
+    margin-bottom:${({ theme }) => theme.spacing.large};
+  }
 
 `;
 
@@ -20,13 +23,13 @@ const TitleContainer = styled.div`
   display: flex;
   justify-content:space-between;
   align-items: center;
-  padding: ${({ theme }) => theme.spacing.medium};
+  padding: ${({ theme }) => theme.spacing.small};
   background-color: ${({ theme }) => theme.colors.primary};
   border-radius: ${({ theme }) => theme.borderRadius.small};
   color: ${({ theme }) => theme.colors.white};
-  font-size: ${({ theme }) => theme.fontSizes.large};
+  font-size: ${({ theme }) => theme.fontSizes.medium};
   @media (max-width: 768px) {
-    font-size: ${({ theme }) => theme.fontSizes.medium};
+    font-size: ${({ theme }) => theme.fontSizes.small};
     padding: ${({ theme }) => theme.spacing.small};
   }
 `;
@@ -36,6 +39,7 @@ const TextContainer = styled.div`
   overflow: hidden;
   transition: max-height 0.3s ease-out;
   background-color: ${({ theme }) => theme.colors.gray};
+  
 `;
 
 const CollapseText = styled.div`
@@ -43,6 +47,12 @@ const CollapseText = styled.div`
   background-color: ${({ theme }) => theme.colors.gray};
   border-radius: ${({ theme }) => theme.borderRadius.small};
   font-size: ${({ theme }) => theme.fontSizes.medium};
+
+ 
+
+  @media (max-width: 768px) {
+    font-size: ${({ theme }) => theme.fontSizes.small};
+  }
 `;
 
 function Dropdown({ title, children }) {
@@ -56,7 +66,7 @@ function Dropdown({ title, children }) {
       <DropdownContainer onClick={handleClick}>
         <TitleContainer>
           <h2>{title}</h2>
-          <FontAwesomeIcon icon={isOpen ? faChevronUp : faChevronDown} />
+          <FontAwesomeIcon icon={isOpen ? faChevronDown : faChevronUp} />
         </TitleContainer>
 
         {isOpen && (

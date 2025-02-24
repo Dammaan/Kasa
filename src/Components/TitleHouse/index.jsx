@@ -10,6 +10,8 @@ const InfoContainer = styled.div`
 const TitleHouse = styled.h1`
   font-size: ${({ theme }) => theme.fontSizes.large};
   color: ${({ theme }) => theme.colors.primary};
+  margin-bottom : ${({ theme }) => theme.spacing.medium};
+
 
   @media (max-width: 768px) {
     font-size: ${({ theme }) => theme.fontSizes.medium};

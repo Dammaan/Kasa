@@ -31,7 +31,7 @@ const ImageHost = styled.img`
 `;
 
 function Host({ logement }) {
-  const { name, picture } = logement.host; // Récupère le nom et l'image de l'hôte
+  const { name, picture } = logement.host;
 
   return (
     <HostContainer>

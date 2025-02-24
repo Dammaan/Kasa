@@ -8,7 +8,12 @@ const SliderContainer = styled.div`
   position: relative;
   width: 90%;
   height: 415px;
-  margin: ${({ theme }) => theme.spacing.large};
+  margin: ${({ theme }) => theme.spacing.small};
+  
+  @media (max-width: 768px) {
+    height: 335px;
+    
+  }
 `;
 
 const Image = styled.img`
@@ -16,6 +21,11 @@ const Image = styled.img`
   height: 415px;
   object-fit: cover;
   border-radius: ${({ theme }) => theme.borderRadius.medium};
+
+  @media (max-width: 768px) {
+    height: 335px;
+    
+  }
 `;
 
 const Button = styled.button`

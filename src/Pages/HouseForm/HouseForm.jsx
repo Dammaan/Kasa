@@ -12,17 +12,51 @@ const PrincipalContainer = styled.div`
 display: flex;
 flex-direction:column;
 align-items:center;
-gap: ${({ theme }) => theme.spacing.xLarge};
+gap: ${({ theme }) => theme.spacing.medium};
 
 `;
 const RowDiv = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start; 
+  width: 90%;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
-const FirstDiv = styled.div`
-`
+const FirstElementDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing.medium};
+  width: 80%; 
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+`;
+
+const SecondElementDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end; 
+  width: 20%; 
+  gap: ${({ theme }) => theme.spacing.medium};
+
+  @media (max-width: 768px) {
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    margin-top: ${({ theme }) => theme.spacing.medium};
+    width: 100%;
+  }
+`;
+
+
+
+
 
 function HouseForm() {
   const { id } = useParams();
@@ -38,15 +72,15 @@ function HouseForm() {
         
     <Slider  logement={logement}/>
       <RowDiv>
-        <FirstDiv>
+        <FirstElementDiv>
         <TitleLoc logement={logement} />
         <Tags  logement={logement}/>
-        </FirstDiv>
+        </FirstElementDiv>
         
-        <div>
+        <SecondElementDiv>
         <Host  logement={logement}/>
         <Rating rating={logement.rating.toString()} /> 
-        </div>
+        </SecondElementDiv>
       </RowDiv>
       
     <InfoDropdown logement={logement}/>

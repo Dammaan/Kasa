@@ -6,12 +6,16 @@ import styled from "styled-components";
 const InfoContainer = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  align-items: space-between;
   width: 90%;
   gap: ${({ theme }) => theme.spacing.large};
 
   @media (max-width: 768px) {
     flex-direction: column;
+    gap: 0;
+    width: 100%;
+    margin-left: 65px;
+
   }
 `;
 
